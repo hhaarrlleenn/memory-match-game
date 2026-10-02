@@ -4,6 +4,14 @@
 
 Memory Match Game is a card matching game built using React, Node.js, Express and SQLite. It has three difficulty levels with different grid sizes, move limits and time limits. Game results are stored in a SQLite database through a REST API.
 
+## Live Demo
+
+[Play the Game](https://memory-match-game-1.onrender.com)
+
+## GitHub
+
+[View Source Code](https://github.com/hhaarrlleenn/memory-match-game)
+
 ## Project Structure
 
 ```text
