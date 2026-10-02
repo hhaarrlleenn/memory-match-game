@@ -1,0 +1,5199 @@
+/* =========================================
+
+
+
+   GLOBAL
+
+
+
+========================================= */
+
+
+
+
+
+
+
+* {
+
+
+
+  box-sizing: border-box;
+
+
+
+}
+
+
+
+
+
+
+
+html,
+
+
+
+body,
+
+
+
+#root {
+
+
+
+  width: 100%;
+
+
+
+  height: 100%;
+
+
+
+}
+
+
+
+
+
+
+
+html {
+
+
+
+  overflow: hidden;
+
+
+
+}
+
+
+
+
+
+
+
+body {
+
+
+
+  margin: 0;
+
+
+
+
+
+
+
+  font-family:
+
+
+
+    Inter,
+
+
+
+    -apple-system,
+
+
+
+    BlinkMacSystemFont,
+
+
+
+    "Segoe UI",
+
+
+
+    sans-serif;
+
+
+
+
+
+
+
+  background: #090b14;
+
+
+
+
+
+
+
+  color: #f5f7ff;
+
+
+
+}
+
+
+
+
+
+
+
+button {
+
+
+
+  font-family: inherit;
+
+
+
+}
+
+
+
+
+
+
+
+#root {
+
+
+
+  min-height: 100vh;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   MAIN GAME
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.game {
+
+
+
+  width: 100%;
+
+
+
+  height: 100vh;
+
+
+
+
+
+
+
+  min-height: 650px;
+
+
+
+
+
+
+
+  padding: 28px 42px 30px;
+
+
+
+
+
+
+
+  display: flex;
+
+
+
+  flex-direction: column;
+
+
+
+
+
+
+
+  position: relative;
+
+
+
+
+
+
+
+  overflow: hidden;
+
+
+
+
+
+
+
+  background:
+
+
+
+    radial-gradient(
+
+
+
+      circle at 10% 20%,
+
+
+
+      rgba(55, 75, 165, 0.18),
+
+
+
+      transparent 28%
+
+
+
+    ),
+
+
+
+    radial-gradient(
+
+
+
+      circle at 90% 75%,
+
+
+
+      rgba(95, 45, 135, 0.14),
+
+
+
+      transparent 30%
+
+
+
+    ),
+
+
+
+    #090b14;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   HEADER
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.game-header {
+
+
+
+  flex-shrink: 0;
+
+
+
+
+
+
+
+  display: flex;
+
+
+
+  flex-direction: column;
+
+
+
+
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+
+
+
+
+  height: 75px;
+
+
+
+
+
+
+
+  margin-bottom: 20px;
+
+
+
+}
+
+
+
+
+
+
+
+.title {
+
+
+
+  margin: 0;
+
+
+
+
+
+
+
+  font-size: clamp(34px, 3vw, 48px);
+
+
+
+
+
+
+
+  line-height: 1;
+
+
+
+
+
+
+
+  letter-spacing: -2px;
+
+
+
+
+
+
+
+  font-weight: 800;
+
+
+
+
+
+
+
+  color: #f5f7ff;
+
+
+
+}
+
+
+
+
+
+
+
+.subtitle {
+
+
+
+  margin: 7px 0 0;
+
+
+
+
+
+
+
+  color: #8a91a7;
+
+
+
+
+
+
+
+  font-size: 14px;
+
+
+
+
+
+
+
+  font-weight: 500;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   MAIN THREE-COLUMN LAYOUT
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.game-layout {
+
+
+
+  width: 100%;
+
+
+
+
+
+
+
+  max-width: 1500px;
+
+
+
+
+
+
+
+  flex: 1;
+
+
+
+
+
+
+
+  min-height: 0;
+
+
+
+
+
+
+
+  margin: 0 auto;
+
+
+
+
+
+
+
+  display: grid;
+
+
+
+
+
+
+
+  grid-template-columns:
+
+
+
+    220px
+
+
+
+    minmax(0, 1fr)
+
+
+
+    220px;
+
+
+
+
+
+
+
+  gap: 30px;
+
+
+
+
+
+
+
+  align-items: center;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   SIDE PANELS
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.side-panel {
+
+
+
+  width: 100%;
+
+
+
+
+
+
+
+  align-self: center;
+
+
+
+
+
+
+
+  background: #11141f;
+
+
+
+
+
+
+
+  border: 1px solid #202534;
+
+
+
+
+
+
+
+  border-radius: 18px;
+
+
+
+
+
+
+
+  padding: 21px;
+
+
+
+
+
+
+
+  box-shadow:
+
+
+
+    0 18px 45px rgba(0, 0, 0, 0.25);
+
+
+
+}
+
+
+
+
+
+
+
+.panel-heading {
+
+
+
+  display: flex;
+
+
+
+
+
+
+
+  align-items: center;
+
+
+
+
+
+
+
+  gap: 9px;
+
+
+
+
+
+
+
+  margin-bottom: 20px;
+
+
+
+
+
+
+
+  font-size: 10px;
+
+
+
+
+
+
+
+  font-weight: 800;
+
+
+
+
+
+
+
+  letter-spacing: 1.4px;
+
+
+
+
+
+
+
+  color: #7b8398;
+
+
+
+}
+
+
+
+
+
+
+
+.heading-line {
+
+
+
+  width: 4px;
+
+
+
+  height: 14px;
+
+
+
+
+
+
+
+  border-radius: 3px;
+
+
+
+
+
+
+
+  background: #ffffff;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   LEFT GAME STATS
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.big-stat {
+
+
+
+  padding: 16px 0;
+
+
+
+
+
+
+
+  border-bottom: 1px solid #202534;
+
+
+
+}
+
+
+
+
+
+
+
+.big-stat:last-of-type {
+
+
+
+  border-bottom: none;
+
+
+
+}
+
+
+
+
+
+
+
+.big-stat span {
+
+
+
+  display: block;
+
+
+
+
+
+
+
+  margin-bottom: 5px;
+
+
+
+
+
+
+
+  font-size: 9px;
+
+
+
+
+
+
+
+  font-weight: 700;
+
+
+
+
+
+
+
+  letter-spacing: 1.2px;
+
+
+
+
+
+
+
+  color: #686f84;
+
+
+
+}
+
+
+
+
+
+
+
+.big-stat strong {
+
+
+
+  font-size: 26px;
+
+
+
+
+
+
+
+  font-weight: 750;
+
+
+
+
+
+
+
+  color: #f5f7ff;
+
+
+
+}
+
+
+
+
+
+
+
+.big-stat small {
+
+
+
+  font-size: 12px;
+
+
+
+
+
+
+
+  color: #6e7589;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   PROGRESS
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.progress-container {
+
+
+
+  margin-top: 20px;
+
+
+
+}
+
+
+
+
+
+
+
+.progress-label {
+
+
+
+  display: flex;
+
+
+
+
+
+
+
+  justify-content: space-between;
+
+
+
+
+
+
+
+  margin-bottom: 8px;
+
+
+
+
+
+
+
+  font-size: 8px;
+
+
+
+
+
+
+
+  font-weight: 700;
+
+
+
+
+
+
+
+  letter-spacing: 1px;
+
+
+
+
+
+
+
+  color: #686f84;
+
+
+
+}
+
+
+
+
+
+
+
+.progress-bar {
+
+
+
+  width: 100%;
+
+
+
+
+
+
+
+  height: 5px;
+
+
+
+
+
+
+
+  overflow: hidden;
+
+
+
+
+
+
+
+  border-radius: 10px;
+
+
+
+
+
+
+
+  background: #222634;
+
+
+
+}
+
+
+
+
+
+
+
+.progress-fill {
+
+
+
+  height: 100%;
+
+
+
+
+
+
+
+  border-radius: inherit;
+
+
+
+
+
+
+
+  background: #ffffff;
+
+
+
+
+
+
+
+  transition: width 0.4s ease;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   CENTER BOARD SECTION
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.board-section {
+
+
+
+  width: 100%;
+
+
+
+
+
+
+
+  height: 100%;
+
+
+
+
+
+
+
+  min-width: 0;
+
+
+
+  min-height: 0;
+
+
+
+
+
+
+
+  display: flex;
+
+
+
+
+
+
+
+  flex-direction: column;
+
+
+
+
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   BOARD HEADER
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.board-top {
+
+
+
+  width: min(100%, 900px);
+
+
+
+
+
+
+
+  flex-shrink: 0;
+
+
+
+
+
+
+
+  display: flex;
+
+
+
+
+
+
+
+  justify-content: space-between;
+
+
+
+
+
+
+
+  padding: 0 4px 10px;
+
+
+
+
+
+
+
+  margin-bottom: 12px;
+
+
+
+
+
+
+
+  border-bottom: 1px solid #202534;
+
+
+
+}
+
+
+
+
+
+
+
+.board-top > div {
+
+
+
+  display: flex;
+
+
+
+
+
+
+
+  flex-direction: column;
+
+
+
+
+
+
+
+  gap: 3px;
+
+
+
+}
+
+
+
+
+
+
+
+.board-top > div:last-child {
+
+
+
+  text-align: right;
+
+
+
+}
+
+
+
+
+
+
+
+.board-label {
+
+
+
+  font-size: 8px;
+
+
+
+
+
+
+
+  font-weight: 700;
+
+
+
+
+
+
+
+  letter-spacing: 1.2px;
+
+
+
+
+
+
+
+  color: #666e83;
+
+
+
+}
+
+
+
+
+
+
+
+.board-top strong {
+
+
+
+  font-size: 12px;
+
+
+
+
+
+
+
+  color: #dce0ec;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   GAME BOARD
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.game-board {
+
+
+
+  display: grid;
+
+
+
+
+
+
+
+  gap: 10px;
+
+
+
+
+
+
+
+  aspect-ratio: 1 / 1;
+
+
+
+
+
+
+
+  padding: 16px;
+
+
+
+
+
+
+
+  background: #0f121c;
+
+
+
+
+
+
+
+  border: 1px solid #202534;
+
+
+
+
+
+
+
+  border-radius: 18px;
+
+
+
+
+
+
+
+  box-shadow:
+
+
+
+    0 25px 60px rgba(0, 0, 0, 0.3);
+
+
+
+
+
+
+
+  flex-shrink: 1;
+
+
+
+
+
+
+
+  min-width: 0;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   BOARD SIZE BY LEVEL
+
+
+
+
+
+
+
+   These keep the board large while making
+
+
+
+   sure it fits inside the desktop viewport.
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.board-E {
+
+
+
+  width: min(
+
+
+
+    390px,
+
+
+
+    calc(100vh - 300px)
+
+
+
+  );
+
+
+
+}
+
+
+
+
+
+
+
+.board-M {
+
+
+
+  width: min(
+
+
+
+    570px,
+
+
+
+    calc(100vh - 250px)
+
+
+
+  );
+
+
+
+}
+
+
+
+
+
+
+
+.board-H {
+
+
+
+  width: min(
+
+
+
+    700px,
+
+
+
+    calc(100vh - 220px)
+
+
+
+  );
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   CARDS
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.card {
+
+
+
+  width: 100%;
+
+
+
+  height: 100%;
+
+
+
+
+
+
+
+  min-width: 0;
+
+
+
+  min-height: 0;
+
+
+
+
+
+
+
+  cursor: pointer;
+
+
+
+
+
+
+
+  perspective: 1000px;
+
+
+
+
+
+
+
+  transition:
+
+
+
+    transform 0.2s ease;
+
+
+
+}
+
+
+
+
+
+
+
+.card-inner {
+
+
+
+  position: relative;
+
+
+
+
+
+
+
+  width: 100%;
+
+
+
+  height: 100%;
+
+
+
+
+
+
+
+  transition:
+
+
+
+    transform 0.45s
+
+
+
+    cubic-bezier(
+
+
+
+      0.4,
+
+
+
+      0.2,
+
+
+
+      0.2,
+
+
+
+      1
+
+
+
+    );
+
+
+
+
+
+
+
+  transform-style: preserve-3d;
+
+
+
+}
+
+
+
+
+
+
+
+.card.flipped .card-inner {
+
+
+
+  transform: rotateY(180deg);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   CARD FRONT + BACK
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.card-front,
+
+
+
+.card-back {
+
+
+
+  position: absolute;
+
+
+
+
+
+
+
+  inset: 0;
+
+
+
+
+
+
+
+  display: flex;
+
+
+
+
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+
+
+
+
+  border-radius: 11px;
+
+
+
+
+
+
+
+  backface-visibility: hidden;
+
+
+
+
+
+
+
+  -webkit-backface-visibility: hidden;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   CARD FRONT
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.card-front {
+
+
+
+  background: #191d2b;
+
+
+
+
+
+
+
+  border: 1px solid #2a3042;
+
+
+
+
+
+
+
+  color: #707993;
+
+
+
+
+
+
+
+  font-size: clamp(18px, 2vw, 27px);
+
+
+
+
+
+
+
+  box-shadow:
+
+
+
+    inset 0 1px 0
+
+
+
+    rgba(255, 255, 255, 0.035);
+
+
+
+
+
+
+
+  transition:
+
+
+
+background 0.2s ease,
+
+
+
+    border 0.2s ease;
+
+
+
+}
+
+
+
+
+
+
+
+.card-front span {
+
+
+
+  opacity: 0.8;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   CARD BACK
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.card-back {
+
+
+
+  transform: rotateY(180deg);
+
+
+
+
+
+
+
+  background: #f4f5f8;
+
+
+
+
+
+
+
+  border: 1px solid #ffffff;
+
+
+
+
+
+
+
+  color: #151925;
+
+
+
+
+
+
+
+  font-size: clamp(20px, 2.5vw, 36px);
+
+
+
+
+
+
+
+  box-shadow:
+
+
+
+    0 5px 15px rgba(0, 0, 0, 0.12);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   CARD HOVER
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.card:not(.matched):hover {
+
+
+
+  transform: translateY(-3px);
+
+
+
+}
+
+
+
+
+
+
+
+.card:not(.matched):hover .card-front {
+
+
+
+  background: #202538;
+
+
+
+
+
+
+
+  border-color: #3b435b;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   MATCHED CARD
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.card.matched {
+
+
+
+  animation: flyAway 0.5s forwards;
+
+
+
+
+
+
+
+  pointer-events: none;
+
+
+
+}
+
+
+
+
+
+
+
+@keyframes flyAway {
+
+
+
+  0% {
+
+
+
+    transform: scale(1);
+
+
+
+
+
+
+
+    opacity: 1;
+
+
+
+  }
+
+
+
+
+
+
+
+  45% {
+
+
+
+    transform:
+
+
+
+      scale(1.08)
+
+
+
+      rotate(5deg);
+
+
+
+
+
+
+
+    opacity: 0.75;
+
+
+
+  }
+
+
+
+
+
+
+
+  100% {
+
+
+
+    transform:
+
+
+
+      scale(0.2)
+
+
+
+      rotate(12deg);
+
+
+
+
+
+
+
+    opacity: 0;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   RIGHT DIFFICULTY PANEL
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.level-options {
+
+
+
+  display: flex;
+
+
+
+
+
+
+
+  flex-direction: column;
+
+
+
+
+
+
+
+  gap: 7px;
+
+
+
+}
+
+
+
+
+
+
+
+.level-option {
+
+
+
+  width: 100%;
+
+
+
+
+
+
+
+  display: flex;
+
+
+
+
+
+
+
+  align-items: center;
+
+
+
+
+
+
+
+  gap: 11px;
+
+
+
+
+
+
+
+  padding: 10px;
+
+
+
+
+
+
+
+  border: 1px solid transparent;
+
+
+
+
+
+
+
+  border-radius: 10px;
+
+
+
+
+
+
+
+  background: transparent;
+
+
+
+
+
+
+
+  color: #858ca1;
+
+
+
+
+
+
+
+  text-align: left;
+
+
+
+
+
+
+
+  cursor: pointer;
+
+
+
+
+
+
+
+  transition:
+
+
+
+background 0.2s ease,
+
+
+
+    color 0.2s ease;
+
+
+
+}
+
+
+
+
+
+
+
+.level-option:hover {
+
+
+
+  background: #191d29;
+
+
+
+
+
+
+
+  color: #ffffff;
+
+
+
+}
+
+
+
+
+
+
+
+.level-option.selected {
+
+
+
+  background: #f3f4f7;
+
+
+
+
+
+
+
+  color: #111522;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   LEVEL LETTER
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.level-letter {
+
+
+
+  width: 31px;
+
+
+
+  height: 31px;
+
+
+
+
+
+
+
+  display: flex;
+
+
+
+
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+
+
+
+
+  flex-shrink: 0;
+
+
+
+
+
+
+
+  border-radius: 8px;
+
+
+
+
+
+
+
+  background: #202535;
+
+
+
+
+
+
+
+  color: #aeb5c9;
+
+
+
+
+
+
+
+  font-size: 10px;
+
+
+
+
+
+
+
+  font-weight: 800;
+
+
+
+}
+
+
+
+
+
+
+
+.level-option.selected .level-letter {
+
+
+
+  background: #111522;
+
+
+
+
+
+
+
+  color: #ffffff;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   LEVEL TEXT
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.level-option strong {
+
+
+
+  display: block;
+
+
+
+
+
+
+
+  font-size: 12px;
+
+
+
+}
+
+
+
+
+
+
+
+.level-option small {
+
+
+
+  display: block;
+
+
+
+
+
+
+
+  margin-top: 3px;
+
+
+
+
+
+
+
+  font-size: 8px;
+
+
+
+
+
+
+
+  color: #747b90;
+
+
+
+}
+
+
+
+
+
+
+
+.level-option.selected small {
+
+
+
+  color: #707686;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   NEW GAME BUTTON
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.restart-button {
+
+
+
+  width: 100%;
+
+
+
+
+
+
+
+  margin-top: 20px;
+
+
+
+
+
+
+
+  padding: 11px;
+
+
+
+
+
+
+
+  border: 1px solid #303648;
+
+
+
+
+
+
+
+  border-radius: 9px;
+
+
+
+
+
+
+
+  background: #191d29;
+
+
+
+
+
+
+
+  color: #e8eaf0;
+
+
+
+
+
+
+
+  font-size: 11px;
+
+
+
+
+
+
+
+  font-weight: 700;
+
+
+
+
+
+
+
+  cursor: pointer;
+
+
+
+
+
+
+
+  transition:
+
+
+
+background 0.2s ease,
+
+
+
+    transform 0.2s ease;
+
+
+
+}
+
+
+
+
+
+
+
+.restart-button:hover {
+
+
+
+  background: #242938;
+
+
+
+
+
+
+
+  transform: translateY(-2px);
+
+
+
+}
+
+
+
+
+
+
+
+.restart-button span {
+
+
+
+  margin-right: 7px;
+
+
+
+
+
+
+
+  font-size: 15px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   WIN / LOSE OVERLAY
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.win-overlay {
+
+
+
+  position: fixed;
+
+
+
+
+
+
+
+  inset: 0;
+
+
+
+
+
+
+
+  z-index: 50;
+
+
+
+
+
+
+
+  display: flex;
+
+
+
+
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+
+
+
+
+  padding: 20px;
+
+
+
+
+
+
+
+  background: rgba(5, 7, 13, 0.8);
+
+
+
+
+
+
+
+  backdrop-filter: blur(9px);
+
+
+
+
+
+
+
+  -webkit-backdrop-filter: blur(9px);
+
+
+
+}
+
+
+
+
+
+
+
+.win-card {
+
+
+
+  width: 400px;
+
+
+
+
+
+
+
+  padding: 34px;
+
+
+
+
+
+
+
+  border: 1px solid #2b3040;
+
+
+
+
+
+
+
+  border-radius: 20px;
+
+
+
+
+
+
+
+  background: #12151f;
+
+
+
+
+
+
+
+  text-align: center;
+
+
+
+
+
+
+
+  box-shadow:
+
+
+
+    0 30px 80px rgba(0, 0, 0, 0.5);
+
+
+
+
+
+
+
+  animation: winAppear 0.35s ease;
+
+
+
+}
+
+
+
+
+
+
+
+@keyframes winAppear {
+
+
+
+  from {
+
+
+
+    opacity: 0;
+
+
+
+
+
+
+
+    transform:
+
+
+
+      translateY(20px)
+
+
+
+      scale(0.96);
+
+
+
+  }
+
+
+
+
+
+
+
+  to {
+
+
+
+    opacity: 1;
+
+
+
+
+
+
+
+    transform:
+
+
+
+      translateY(0)
+
+
+
+      scale(1);
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   WIN ICON
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.win-icon {
+
+
+
+  width: 52px;
+
+
+
+  height: 52px;
+
+
+
+
+
+
+
+  display: flex;
+
+
+
+
+
+
+
+  align-items: center;
+
+
+
+  justify-content: center;
+
+
+
+
+
+
+
+  margin: 0 auto 15px;
+
+
+
+
+
+
+
+  border-radius: 50%;
+
+
+
+
+
+
+
+  background: #f4f5f8;
+
+
+
+
+
+
+
+  color: #111522;
+
+
+
+
+
+
+
+  font-size: 23px;
+
+
+
+
+
+
+
+  font-weight: 800;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   WIN TEXT
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.win-small {
+
+
+
+  font-size: 9px;
+
+
+
+
+
+
+
+  font-weight: 800;
+
+
+
+
+
+
+
+  letter-spacing: 1.5px;
+
+
+
+
+
+
+
+  color: #737b91;
+
+
+
+}
+
+
+
+
+
+
+
+.win-card h2 {
+
+
+
+  margin: 8px 0 5px;
+
+
+
+
+
+
+
+  font-size: 29px;
+
+
+
+
+
+
+
+  letter-spacing: -0.8px;
+
+
+
+}
+
+
+
+
+
+
+
+.win-card > p {
+
+
+
+  margin: 0 0 22px;
+
+
+
+
+
+
+
+  color: #737b91;
+
+
+
+
+
+
+
+  font-size: 12px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   FINAL STATISTICS
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.final-stats {
+
+
+
+  display: grid;
+
+
+
+
+
+
+
+  grid-template-columns:
+
+
+
+    repeat(3, 1fr);
+
+
+
+
+
+
+
+  gap: 7px;
+
+
+
+
+
+
+
+  margin-bottom: 20px;
+
+
+
+}
+
+
+
+
+
+
+
+.final-stats div {
+
+
+
+  padding: 11px 5px;
+
+
+
+
+
+
+
+  border-radius: 9px;
+
+
+
+
+
+
+
+  background: #191d28;
+
+
+
+}
+
+
+
+
+
+
+
+.final-stats span {
+
+
+
+  display: block;
+
+
+
+
+
+
+
+  margin-bottom: 4px;
+
+
+
+
+
+
+
+  font-size: 8px;
+
+
+
+
+
+
+
+  letter-spacing: 1px;
+
+
+
+
+
+
+
+  color: #686f84;
+
+
+
+}
+
+
+
+
+
+
+
+.final-stats strong {
+
+
+
+  font-size: 16px;
+
+
+
+
+
+
+
+  color: #f2f3f7;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   PLAY AGAIN
+
+
+
+========================================= */
+
+
+
+
+
+
+
+.play-again-button {
+
+
+
+  width: 100%;
+
+
+
+
+
+
+
+  padding: 12px;
+
+
+
+
+
+
+
+  border: none;
+
+
+
+
+
+
+
+  border-radius: 9px;
+
+
+
+
+
+
+
+  background: #f3f4f7;
+
+
+
+
+
+
+
+  color: #111522;
+
+
+
+
+
+
+
+  font-size: 12px;
+
+
+
+
+
+
+
+  font-weight: 750;
+
+
+
+
+
+
+
+  cursor: pointer;
+
+
+
+
+
+
+
+  transition:
+
+
+
+    transform 0.2s ease,
+
+
+
+background 0.2s ease;
+
+
+
+}
+
+
+
+
+
+
+
+.play-again-button:hover {
+
+
+
+  background: #ffffff;
+
+
+
+
+
+
+
+  transform: translateY(-2px);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   SHORT DESKTOP / LAPTOP SCREEN
+
+
+
+
+
+
+
+   Handles screens with lower height so
+
+
+
+   Medium and Hard don't create scrolling.
+
+
+
+========================================= */
+
+
+
+
+
+
+
+@media (max-height: 900px) and (min-width: 851px) {
+
+
+
+
+
+
+
+  .game {
+
+
+
+    padding-top: 18px;
+
+
+
+
+
+
+
+    padding-bottom: 18px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .game-header {
+
+
+
+    height: 58px;
+
+
+
+
+
+
+
+    margin-bottom: 12px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .title {
+
+
+
+    font-size: 36px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .subtitle {
+
+
+
+    margin-top: 4px;
+
+
+
+
+
+
+
+    font-size: 11px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .game-layout {
+
+
+
+    gap: 22px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .side-panel {
+
+
+
+    padding: 17px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .big-stat {
+
+
+
+    padding: 11px 0;
+
+
+
+  }
+
+
+
+
+
+
+
+  .big-stat strong {
+
+
+
+    font-size: 23px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .game-board {
+
+
+
+    gap: 8px;
+
+
+
+
+
+
+
+    padding: 13px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .board-E {
+
+
+
+    width: min(
+
+
+
+      350px,
+
+
+
+      calc(100vh - 230px)
+
+
+
+    );
+
+
+
+  }
+
+
+
+
+
+
+
+  .board-M {
+
+
+
+    width: min(
+
+
+
+      500px,
+
+
+
+      calc(100vh - 190px)
+
+
+
+    );
+
+
+
+  }
+
+
+
+
+
+
+
+  .board-H {
+
+
+
+    width: min(
+
+
+
+      620px,
+
+
+
+      calc(100vh - 170px)
+
+
+
+    );
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   SMALL DESKTOP
+
+
+
+========================================= */
+
+
+
+
+
+
+
+@media (max-width: 1100px) and (min-width: 851px) {
+
+
+
+
+
+
+
+  .game {
+
+
+
+    padding-left: 22px;
+
+
+
+
+
+
+
+    padding-right: 22px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .game-layout {
+
+
+
+    grid-template-columns:
+
+
+
+      180px
+
+
+
+      minmax(0, 1fr)
+
+
+
+      180px;
+
+
+
+
+
+
+
+    gap: 18px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .side-panel {
+
+
+
+    padding: 15px;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   TABLET / MOBILE
+
+
+
+
+
+
+
+   Scrolling is allowed here because
+
+
+
+   mobile screens are much smaller.
+
+
+
+========================================= */
+
+
+
+
+
+
+
+@media (max-width: 850px) {
+
+
+
+
+
+
+
+  html {
+
+
+
+    overflow: auto;
+
+
+
+  }
+
+
+
+
+
+
+
+  body {
+
+
+
+    overflow: auto;
+
+
+
+  }
+
+
+
+
+
+
+
+  .game {
+
+
+
+    height: auto;
+
+
+
+
+
+
+
+    min-height: 100vh;
+
+
+
+
+
+
+
+    overflow: visible;
+
+
+
+
+
+
+
+    padding: 25px 15px 40px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .game-header {
+
+
+
+    height: auto;
+
+
+
+
+
+
+
+    margin-bottom: 25px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .title {
+
+
+
+    font-size: 34px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .subtitle {
+
+
+
+    font-size: 12px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .game-layout {
+
+
+
+    display: flex;
+
+
+
+
+
+
+
+    flex-direction: column;
+
+
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+
+
+    gap: 18px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .board-section {
+
+
+
+    width: 100%;
+
+
+
+
+
+
+
+    height: auto;
+
+
+
+  }
+
+
+
+
+
+
+
+  .board-E,
+
+
+
+  .board-M,
+
+
+
+  .board-H {
+
+
+
+    width: min(
+
+
+
+      92vw,
+
+
+
+      600px
+
+
+
+    );
+
+
+
+  }
+
+
+
+
+
+
+
+  .left-panel,
+
+
+
+  .right-panel {
+
+
+
+    width: min(
+
+
+
+      600px,
+
+
+
+      100%
+
+
+
+    );
+
+
+
+  }
+
+
+
+
+
+
+
+  .left-panel {
+
+
+
+    order: 2;
+
+
+
+
+
+
+
+    display: grid;
+
+
+
+
+
+
+
+    grid-template-columns:
+
+
+
+      repeat(3, 1fr);
+
+
+
+
+
+
+
+    gap: 10px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .right-panel {
+
+
+
+    order: 3;
+
+
+
+  }
+
+
+
+
+
+
+
+  .big-stat {
+
+
+
+    padding: 8px;
+
+
+
+
+
+
+
+    border-bottom: none;
+
+
+
+  }
+
+
+
+
+
+
+
+  .progress-container {
+
+
+
+    grid-column: 1 / -1;
+
+
+
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+
+
+
+   SMALL MOBILE
+
+
+
+========================================= */
+
+
+
+
+
+
+
+@media (max-width: 500px) {
+
+
+
+
+
+
+
+  .game {
+
+
+
+    padding-left: 10px;
+
+
+
+
+
+
+
+    padding-right: 10px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .title {
+
+
+
+    font-size: 30px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .subtitle {
+
+
+
+    font-size: 11px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .game-board {
+
+
+
+    gap: 6px;
+
+
+
+
+
+
+
+    padding: 9px;
+
+
+
+
+
+
+
+    border-radius: 13px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .card-front {
+
+
+
+    font-size: 18px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .card-back {
+
+
+
+    font-size: 22px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .left-panel {
+
+
+
+    grid-template-columns:
+
+
+
+      repeat(3, 1fr);
+
+
+
+  }
+
+
+
+
+
+
+
+  .side-panel {
+
+
+
+    border-radius: 14px;
+
+
+
+  }
+
+
+
+
+
+
+
+  .win-card {
+
+
+
+    width: 100%;
+
+
+
+
+
+
+
+    padding: 28px 22px;
+
+
+
+  }
+
+
+
+}
+
+/* =========================================
+
+   BACKEND STATS + LEADERBOARD
+
+   ========================================= */
+
+
+
+/*
+
+   The game itself stays at least one viewport tall,
+
+   but it must be allowed to grow because the backend
+
+   stats and leaderboard are below the game board.
+
+*/
+
+
+
+.game {
+
+  height: auto;
+
+  min-height: 100vh;
+
+  overflow: visible;
+
+}
+
+
+
+/*
+
+   Preserve the original three-column game area.
+
+   It occupies the available desktop viewport, while
+
+   the backend section sits naturally below it.
+
+*/
+
+
+
+.game-layout {
+
+  flex: 0 0 auto;
+
+  min-height: calc(100vh - 153px);
+
+}
+
+
+
+/*
+
+   This selector works with the current App.jsx even if
+
+   the backend section still has inline styles.
+
+*/
+
+
+
+.game > section[style*="1200px"],
+
+.game > .backend-section {
+
+  width: min(1200px, calc(100% - 84px)) !important;
+
+  max-width: 1200px !important;
+
+  margin: 50px auto 40px !important;
+
+  display: grid !important;
+
+  grid-template-columns: minmax(260px, 0.85fr) minmax(0, 1.5fr) !important;
+
+  gap: 24px !important;
+
+  align-items: start !important;
+
+  position: relative;
+
+  flex: 0 0 auto;
+
+  clear: both;
+
+  z-index: 1;
+
+}
+
+
+
+/*
+
+   Backend cards deliberately do NOT behave like the
+
+   original left/right game panels.
+
+*/
+
+
+
+.game > section[style*="1200px"] > .side-panel,
+
+.game > .backend-section > .backend-card,
+
+.game > .backend-section > .side-panel {
+
+  width: 100% !important;
+
+  min-width: 0;
+
+  align-self: stretch;
+
+  position: relative;
+
+  background: #11141f;
+
+  border: 1px solid #202534;
+
+  border-radius: 18px;
+
+  padding: 24px !important;
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+
+}
+
+
+
+/* Backend statistics */
+
+
+
+.game > section[style*="1200px"] .backend-stats,
+
+.game > .backend-section .backend-stats {
+
+  display: grid;
+
+  gap: 0;
+
+}
+
+
+
+.game > section[style*="1200px"] .backend-stats .big-stat,
+
+.game > .backend-section .backend-stats .big-stat {
+
+  padding: 14px 0;
+
+}
+
+
+
+/* Backend leaderboard */
+
+
+
+.game > section[style*="1200px"] table,
+
+.game > .backend-section table {
+
+  width: 100%;
+
+  border-collapse: collapse;
+
+  color: #f5f7ff;
+
+}
+
+
+
+.game > section[style*="1200px"] thead,
+
+.game > .backend-section thead {
+
+  border-bottom: 1px solid #202534;
+
+}
+
+
+
+.game > section[style*="1200px"] th,
+
+.game > section[style*="1200px"] td,
+
+.game > .backend-section th,
+
+.game > .backend-section td {
+
+  padding: 12px 10px !important;
+
+  text-align: left;
+
+  white-space: nowrap;
+
+}
+
+
+
+.game > section[style*="1200px"] th,
+
+.game > .backend-section th {
+
+  color: #7b8398;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+
+}
+
+
+
+.game > section[style*="1200px"] td,
+
+.game > .backend-section td {
+
+  color: #dce0ec;
+
+  font-size: 12px;
+
+  border-bottom: 1px solid rgba(32, 37, 52, 0.7);
+
+}
+
+
+
+.game > section[style*="1200px"] tbody tr:last-child td,
+
+.game > .backend-section tbody tr:last-child td {
+
+  border-bottom: none;
+
+}
+
+
+
+/* Backend loading / empty / error text */
+
+
+
+.game > section[style*="1200px"] p,
+
+.game > .backend-section p {
+
+  color: #8a91a7;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  margin: 0;
+
+}
+
+
+
+
+
+/* =========================================
+
+   BACKEND SECTION — SHORT DESKTOP
+
+   ========================================= */
+
+
+
+@media (max-height: 900px) and (min-width: 851px) {
+
+
+
+  .game {
+
+    overflow: visible;
+
+  }
+
+
+
+  .game-layout {
+
+    min-height: calc(100vh - 106px);
+
+  }
+
+
+
+  .game > section[style*="1200px"],
+
+  .game > .backend-section {
+
+    margin-top: 40px !important;
+
+  }
+
+}
+
+
+
+
+
+/* =========================================
+
+   BACKEND SECTION — SMALL DESKTOP
+
+   ========================================= */
+
+
+
+@media (max-width: 1100px) and (min-width: 851px) {
+
+
+
+  .game > section[style*="1200px"],
+
+  .game > .backend-section {
+
+    width: calc(100% - 44px) !important;
+
+    grid-template-columns: 1fr 1.35fr !important;
+
+    gap: 18px !important;
+
+  }
+
+
+
+  .game > section[style*="1200px"] > .side-panel,
+
+  .game > .backend-section > .backend-card,
+
+  .game > .backend-section > .side-panel {
+
+    padding: 20px !important;
+
+  }
+
+}
+
+
+
+
+
+/* =========================================
+
+   BACKEND SECTION — TABLET / MOBILE
+
+   ========================================= */
+
+
+
+@media (max-width: 850px) {
+
+
+
+  .game {
+
+    height: auto;
+
+    min-height: 100vh;
+
+    overflow: visible;
+
+  }
+
+
+
+  .game-layout {
+
+    flex: none;
+
+    min-height: 0;
+
+  }
+
+
+
+  .game > section[style*="1200px"],
+
+  .game > .backend-section {
+
+    width: 100% !important;
+
+    max-width: 600px !important;
+
+    margin: 35px auto 0 !important;
+
+    grid-template-columns: 1fr !important;
+
+    gap: 18px !important;
+
+  }
+
+
+
+  .game > section[style*="1200px"] > .side-panel,
+
+  .game > .backend-section > .backend-card,
+
+  .game > .backend-section > .side-panel {
+
+    width: 100% !important;
+
+  }
+
+}
+
+
+
+
+
+/* =========================================
+
+   BACKEND SECTION — SMALL MOBILE
+
+   ========================================= */
+
+
+
+@media (max-width: 500px) {
+
+
+
+  .game > section[style*="1200px"],
+
+  .game > .backend-section {
+
+    width: 100% !important;
+
+    margin-top: 28px !important;
+
+  }
+
+
+
+  .game > section[style*="1200px"] > .side-panel,
+
+  .game > .backend-section > .backend-card,
+
+  .game > .backend-section > .side-panel {
+
+    padding: 18px !important;
+
+    border-radius: 14px;
+
+  }
+
+
+
+  .game > section[style*="1200px"] th,
+
+  .game > section[style*="1200px"] td,
+
+  .game > .backend-section th,
+
+  .game > .backend-section td {
+
+    padding: 9px 7px !important;
+
+  }
+
+}
