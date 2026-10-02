@@ -9,7 +9,7 @@ require("./config/database");
 
 const app = express();
 
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 
 // Allow frontend requests
 app.use(
@@ -24,6 +24,6 @@ app.use("/api", gameRoutes);
 
 app.use(errorMiddleware);
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
 });
